@@ -10,7 +10,7 @@ public class AssignmentProduct {
         System.out.println("1.Add product");
         System.out.println("2.Edit product");
         System.out.println("3.Delete product");
-        System.out.println("4.View all product(default sort bu Name of product)");
+        System.out.println("4.View all product (Default sort by Name of product) ");
         System.out.println("5.Search product by id");
         System.out.println("6.Search product by name");
         System.out.println("7.End");
@@ -51,7 +51,7 @@ public class AssignmentProduct {
         String password = "";
 
         Connection connection = DriverManager.getConnection(dbURL, username, password);
-        System.out.println("ket noi thanh cong");
+        System.out.println("Da ket noi thanh cong");
         return connection;
 
     }
@@ -96,7 +96,7 @@ public class AssignmentProduct {
         preparedStatement.setDouble(4,price);
         int rowUpdated = preparedStatement.executeUpdate();
         if (rowUpdated>0){
-            System.out.println("update complete");
+            System.out.println("Update complete");
         }
     }
     public static void deleteProduct() throws SQLException{
@@ -151,7 +151,7 @@ public class AssignmentProduct {
         String id2 = sc.next();
         pe.setString(1,id2);
         ResultSet resultSet = pe.executeQuery();
-        while (resultSet.next()){
+        while (resultSet.next()) {
             int id = resultSet.getInt(1);
             String name = resultSet.getString("proName");
             String desc = resultSet.getString("proDesc");
